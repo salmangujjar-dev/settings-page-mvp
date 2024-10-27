@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: false,
+  compiler: {
+    removeConsole: process.env.NEXT_PUBLIC_APP_ENV === 'production' ? true : false,
+},
 };
 
 export default nextConfig;
