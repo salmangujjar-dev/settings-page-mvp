@@ -1,3 +1,5 @@
+"use client";
+
 import { useTheme } from "next-themes";
 
 import { THEME_OPTIONS } from "src/utils/constants";

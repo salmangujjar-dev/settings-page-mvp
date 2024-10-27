@@ -1,4 +1,5 @@
-import { useRouter } from "next/navigation";
+"use client";
+import Link from "next/link";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 import { SETTINGS_MENU } from "src/utils/constants";
@@ -19,8 +20,6 @@ import Todos from "../Todos/page";
 
 const SideMenuContent = () => {
   const { currentStep, setStep } = useSettingsProvider();
-
-  const { push } = useRouter();
 
   const handlePrevStep = () => {
     if (currentStep.prevStep) {
@@ -50,9 +49,9 @@ const SideMenuContent = () => {
 
   return (
     <div className="realtive flex flex-col p-8 md:p-12 overflow-x-hidden basis-2/3 bg-[#F9F9F9] dark:bg-[#181818]">
-      <div
+      <Link
         className="absolute top-4 right-7 lg:top-8 lg:right-10 text-center cursor-pointer hover:scale-110 ease-in-out transition-all group flex-1"
-        onClick={() => push("/")}
+        href="/"
       >
         <div className="w-10 h-10 leading-none rounded-full bg-gray-200 shadow-sm text-gray-900 flex items-center justify-center group-hover:bg-gray-300">
           X
@@ -60,7 +59,7 @@ const SideMenuContent = () => {
         <span className="text-sm text-gray-500 font-semibold tracking-wide">
           ESC
         </span>
-      </div>
+      </Link>
       <div className="md:max-w-3xl flex flex-col flex-1">
         {(() => {
           switch (currentStep.path) {
@@ -92,8 +91,8 @@ const SideMenuContent = () => {
               return <div>Not Implemented Yet</div>;
           }
         })()}
-        <hr className="my-6 bg-gray-200 h-0.5" />
         <div className="flex justify-between gap-x-4 mt-auto">
+          <hr className="my-6 bg-gray-200 h-0.5" />
           {currentStep.prevStep && (
             <div
               className="flex items-center justify-between bg-[#E7E7E7] rounded-lg p-3 flex-1 hover:bg-[#C5C5C5] cursor-pointer"

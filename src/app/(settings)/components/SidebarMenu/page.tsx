@@ -1,3 +1,4 @@
+"use client";
 import { IoExitOutline } from "react-icons/io5";
 
 import { clsxm } from "src/utils/clsxm";
