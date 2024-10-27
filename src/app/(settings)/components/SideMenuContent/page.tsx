@@ -91,36 +91,39 @@ const SideMenuContent = () => {
               return <div>Not Implemented Yet</div>;
           }
         })()}
-        <div className="flex justify-between gap-x-4 mt-auto">
+
+        <div className="mt-auto">
           <hr className="my-6 bg-gray-200 h-0.5" />
-          {currentStep.prevStep && (
-            <div
-              className="flex items-center justify-between bg-[#E7E7E7] rounded-lg p-3 flex-1 hover:bg-[#C5C5C5] cursor-pointer"
-              onClick={handlePrevStep}
-            >
-              <FaArrowLeft className="fill-[#999999]" />
-              <div className="flex flex-col items-end">
-                <span className="text-sm font-semibold">
-                  {currentStep.prevStepLabel}
-                </span>
-                <span className="text-xs">Previous</span>
+          <div className="flex justify-between gap-x-4">
+            {currentStep.prevStep && (
+              <div
+                className="flex items-center justify-between bg-[#E7E7E7] dark:bg-slate-700 rounded-lg p-3 flex-1 hover:bg-[#C5C5C5] cursor-pointer"
+                onClick={handlePrevStep}
+              >
+                <FaArrowLeft className="fill-[#999999]" />
+                <div className="flex flex-col items-end">
+                  <span className="text-sm font-semibold">
+                    {currentStep.prevStepLabel}
+                  </span>
+                  <span className="text-xs">Previous</span>
+                </div>
               </div>
-            </div>
-          )}
-          {currentStep.nextStep && (
-            <div
-              className="flex flex-row-reverse items-center justify-between bg-[#E7E7E7] rounded-lg p-3 flex-1 hover:bg-[#C5C5C5] cursor-pointer"
-              onClick={handleNextStep}
-            >
-              <FaArrowRight className="fill-[#999999]" />
-              <div className="flex flex-col">
-                <span className="text-sm font-semibold">
-                  {currentStep.nextStepLabel}
-                </span>
-                <span className="text-xs">Next</span>
+            )}
+            {currentStep.nextStep && (
+              <div
+                className="flex flex-row-reverse items-center justify-between bg-[#E7E7E7] dark:bg-slate-700 rounded-lg p-3 flex-1 hover:bg-[#C5C5C5] cursor-pointer"
+                onClick={handleNextStep}
+              >
+                <FaArrowRight className="fill-[#999999]" />
+                <div className="flex flex-col">
+                  <span className="text-sm font-semibold">
+                    {currentStep.nextStepLabel}
+                  </span>
+                  <span className="text-xs">Next</span>
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </div>
